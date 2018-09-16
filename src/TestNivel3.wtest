@@ -1,0 +1,63 @@
+import fuerzaOscura.*
+import espectroMalefico.*
+import hechizoBasico.*
+import hechiceriaAvanzada.*
+import rolando.*
+import refuerzos.*
+import libroHechizos.*
+
+test "Saber si Rolando está cargado"{
+	assert.that(rolando.estaCargado())
+}
+
+test "Hacer que Rolando se saque la armadura,
+	 luego saber si Rolando está cargado" {
+	 rolando.artefactos().remove(armadura)
+	 assert.notThat(rolando.estaCargado())
+}
+
+test "Saber cuanta habilidad para la lucha tiene Rolando"{
+	 assert.equals(20,rolando.valorLucha())
+}
+
+test "Saber cual es la habilidad para la lucha de la armadura
+	 de Rolando si tiene una bendición de refuerzo"{
+	 armadura.tieneRefuerzo(true)
+	 armadura.refuerzo(bendicion)
+	 assert.equals(58,armadura.unidadesDeLucha())
+}
+
+test "Saber cual es la habilidad para la lucha de la armadura
+	 de Rolando si tiene una cota de malla de refuerzo"{
+	 armadura.tieneRefuerzo(true)
+	 armadura.refuerzo(cotaDeMalla)
+	 assert.equals(3,armadura.unidadesDeLucha())
+}
+
+test "Saber cual es la habilidad para la lucha de la armadura
+	 de Rolando si tiene el hechizo básico de refuerzo"{
+	 armadura.tieneRefuerzo(true)
+	 armadura.refuerzo(hechizoBasico)
+	 assert.equals(12,armadura.unidadesDeLucha())
+}
+
+test "Saber cual es la habilidad para la lucha de la armadura
+	 de Rolando si tiene el hechizo espectro maléfico de refuerzo"{
+	 armadura.tieneRefuerzo(true)
+	 armadura.refuerzo(espectroMalefico)
+	 assert.equals(19,armadura.unidadesDeLucha())
+}
+
+test "Eliminar todos los artefactos de Rolando. Incorporar el espejo.
+	 Luego, conocer la habilidad para la lucha de Rolando"{
+	 rolando.artefactos().clear()
+	 rolando.agregarArtefacto(espejo)
+	 assert.equals(1,rolando.valorLucha())
+}
+
+test "Reemplazar el hechizo preferido por un libro de hechizos,
+	 que contenga el espectro maléfico (con nombre 'espectro malefico'),
+	 y al hechizo básico. Luego conocer el nivel de hechiceria de Rolando"{
+	 rolando.cambiarHechizoPreferido(libroHechizos)
+	 assert.equals(56,rolando.nivelHechiceria())
+}

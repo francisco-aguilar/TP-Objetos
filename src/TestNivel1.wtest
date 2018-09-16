@@ -1,0 +1,42 @@
+import espectroMalefico.*
+import hechizoBasico.*
+import rolando.*
+import fuerzaOscura.*
+
+test "Conocer nivel de hechicería de Rolando" {
+	assert.equals(56,rolando.nivelHechiceria())
+}
+
+test "Cambiar nombre de espectro maléfico a 
+	 'espectro superrecontramalefico muajajaja', luego
+	 conocer el nivel de hechiceria de Rolando" {
+	 espectroMalefico.cambiarNombre("espectro superrecontramalefico muajajaja")
+	 assert.equals(125,rolando.nivelHechiceria())
+}
+
+test "Cambiar hechizo preferido de Rolando a hechizo básico,
+	 luego conocer el nivel de hechiceria de Rolando" {
+	 rolando.cambiarHechizoPreferido(hechizoBasico)
+	 assert.equals(35,rolando.nivelHechiceria())
+}
+
+test "Hacer que ocurra un eclipse, luego conocer
+	 el nivel de hechiceria de Rolando" {
+	 fuerzaOscura.eclipse()
+	 assert.equals(61,rolando.nivelHechiceria())
+}
+
+test "Saber si el espectro maléfico es poderoso" {
+	 assert.that(espectroMalefico.esPoderoso())
+}
+
+test "Cambiar el nombre del espectro maléfico a
+	 'pepe', luego saber si el espectro maléfico
+	 es poderoso" {
+	 espectroMalefico.cambiarNombre("pepe")
+	 assert.notThat(espectroMalefico.esPoderoso())
+}
+
+test "Saber si el hechizo básico es poderoso"{
+	 assert.notThat(hechizoBasico.esPoderoso())
+}
