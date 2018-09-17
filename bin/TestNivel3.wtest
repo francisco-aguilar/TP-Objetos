@@ -12,7 +12,7 @@ test "Saber si Rolando está cargado"{
 
 test "Hacer que Rolando se saque la armadura,
 	 luego saber si Rolando está cargado" {
-	 rolando.artefactos().remove(armadura)
+	 rolando.removerArtefacto(armadura)
 	 assert.notThat(rolando.estaCargado())
 }
 
