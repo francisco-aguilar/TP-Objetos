@@ -2,7 +2,7 @@ object espectroMalefico {
 	var nombre = "Espectro Malefico"
 	var property esPoderoso = true
 		
-	method cambiarNombre(nuevoNombre){
+	method nombre(nuevoNombre){
 		nombre = nuevoNombre
 	}
 	
