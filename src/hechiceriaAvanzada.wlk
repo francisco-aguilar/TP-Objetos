@@ -10,21 +10,17 @@ object armadura{
 	var property refuerzo // no pide inicializar
 	var valorBase = 2
 	
-	method unidadesDeLucha(){
-		if(tieneRefuerzo){
+	method unidadesDeLucha(personaje){
 			return valorBase + refuerzo.unidadesExtra()
-		}else{
-			return valorBase
-		}
 	}
 }
 
 object espejo{
-	method unidadesDeLucha(){
-		if(rolando.artefactos() == [self]){
+	method unidadesDeLucha(personaje){
+		if(personaje.artefactos() == [self]){
 			return 0
 		}else{
-			return rolando.mejorPertenencia().unidadesDeLucha()
+			return personaje.mejorPertenencia().unidadesDeLucha()
 		}
 	}
 }
