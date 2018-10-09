@@ -48,6 +48,10 @@ object rolando{
 		return pertenenciasRestantes.max({unArtefacto => unArtefacto.unidadesDeLucha()}) //maximo segun unidades de lucha
 	}
 	
+	method poderMejorPertenencia(){
+		return self.mejorPertenencia().unidadesDeLucha()	
+	}
+	
 	method estaCargado(){
 		return artefactos.size() >= 5
 	}
