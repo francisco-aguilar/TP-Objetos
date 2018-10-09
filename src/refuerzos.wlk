@@ -13,3 +13,6 @@ object bendicion{
 	}
 }
 
+object ninguno{
+	var property unidadesExtra = 0
+}
