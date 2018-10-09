@@ -2,17 +2,23 @@ import rolando.*
 import hechiceriaAvanzada.*
 
 object cotaDeMalla{
-	method unidadesExtra(){
-		return 1
+	var unidadesExtra = 1
+
+	method unidadesExtra(personaje){
+		return unidadesExtra
 	}
 }
 
 object bendicion{
-	method unidadesExtra(){
-		return rolando.nivelHechiceria()
+	method unidadesExtra(personaje){
+		return personaje.nivelHechiceria()
 	}
 }
 
 object ninguno{
-	var property unidadesExtra = 0
+	var unidadesExtra = 0
+	
+	method unidadesExtra(personaje){
+		return unidadesExtra
+	}
 }
