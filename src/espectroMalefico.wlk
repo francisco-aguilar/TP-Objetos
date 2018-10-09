@@ -14,7 +14,7 @@ object espectroMalefico {
 		return nombre.size()
 	}
 	
-	method unidadesExtra(){
+	method unidadesExtra(personaje){
 		return self.poder()
 	}
 }
